@@ -70,19 +70,47 @@ async def get_diagnosis(request: DiagnosisRequest):
     Từ lúc bắt đầu cho đến nay, triệu chứng {request.question4} gây cho bệnh nhân những điều khó chịu.
     Trước đó, bệnh nhân {request.question5} làm để giảm nhẹ triệu chứng này. Trước đó, bệnh nhân {request.question6} sử dụng thuốc. Thuốc đó {request.question7} hiệu quả.
     Hãy chẩn đoán kết quả bệnh trả về là gồm tên bệnh, mô tả ngắn gọn của bệnh, lời khuyên sức khỏe, top 3 bệnh có khả năng gặp.
-    Trả lời theo dàn ý như sau:
-    1. Top 3 Bệnh bệnh nhân có khả năng gặp là:
-        - Top 1:
-        - Mô tả ngắn gọn Top 1 bệnh:
-        - Top 2:
-        - Mô tả ngắn gọn Top 2 bệnh:
-        - Top 3:
-        - Mô tả ngắn gọn Top 3 bệnh:
-    2. Top 3 lời khuyên sức khỏe:
-        - Top 1:
-        - Top 2:
-        - Top 3:
+    Trả lời theo dàn ý cố định, không thay đổi bất cứ thứ gì như sau:
+
+    ## Chẩn đoán bệnh cho bệnh nhân:
+
+    **1. Top 3 Bệnh bệnh nhân có khả năng gặp là:**
+
+    - **Top 1: Tên bệnh:**
+        - **Mô tả ngắn gọn Top 1 bệnh:**
+    - **Top 2: Tên bệnh:**
+        - **Mô tả ngắn gọn Top 2 bệnh:**
+    - **Top 3: Tên bệnh:**
+        - **Mô tả ngắn gọn Top 3 bệnh:**
+    
+    **2. Top 3 lời khuyên sức khỏe:**
+
+    - **Top 1:**
+    - **Top 2:** 
+    - **Top 3:** 
+
     Thêm dòng này sau mỗi lần chẩn đoán: Lưu ý: Những thông tin này chỉ mang tính chất tham khảo, không thay thế cho lời khuyên của bác sĩ. Hãy đến gặp bác sĩ để được chẩn đoán và điều trị phù hợp.
+    
+    Ví dụ cụ thể như sau:
+    ## Chẩn đoán bệnh cho bệnh nhân:
+
+    **1. Top 3 Bệnh bệnh nhân có khả năng gặp là:**
+
+    - **Top 1: Cảm cúm:**
+        - **Mô tả ngắn gọn Top 1 bệnh:** Cảm cúm là bệnh nhiễm trùng đường hô hấp do virus cúm gây ra. Triệu chứng thường gặp là chảy nước mũi, hắt hơi, sốt, ho, đau đầu, mệt mỏi. Bệnh thường tự khỏi trong vòng 1-2 tuần.
+    - **Top 2: Viêm xoang:**
+        - **Mô tả ngắn gọn Top 2 bệnh:** Viêm xoang là tình trạng viêm nhiễm niêm mạc xoang, gây ra các triệu chứng như nghẹt mũi, chảy nước mũi, đau 
+    đầu, đau mặt.
+    - **Top 3:  Viêm mũi dị ứng:**
+        - **Mô tả ngắn gọn Top 3 bệnh:** Viêm mũi dị ứng là phản ứng của cơ thể với các tác nhân dị ứng như phấn hoa, bụi, nấm mốc, lông thú,... gây ra các triệu chứng như nghẹt mũi, chảy nước mũi, hắt hơi, ngứa mũi, ngứa mắt.
+
+    **2. Top 3 lời khuyên sức khỏe:**
+
+    - **Top 1:** Nghỉ ngơi, uống nhiều nước, ăn uống đầy đủ chất dinh dưỡng để tăng cường sức đề kháng.
+    - **Top 2:** Sử dụng thuốc theo chỉ định của bác sĩ để giảm triệu chứng và phòng ngừa biến chứng.
+    - **Top 3:** Tránh tiếp xúc với khói bụi, hóa chất, người bệnh để hạn chế nguy cơ lây nhiễm.
+
+    **Lưu ý:** Những thông tin này chỉ mang tính chất tham khảo, không thay thế cho lời khuyên của bác sĩ. Hãy đến gặp bác sĩ để được chẩn đoán và điều trị phù hợp.
     """
 
     try:
