@@ -152,11 +152,15 @@ async def get_diagnosis(request: DiagnosisRequest):
         }
 
         diagnosis_response["otherDiseases"] = diagnosis_response["otherDiseases"][1:]
-        return diagnosis_response
+        return {
+            "status": 200,
+            "message": "success",
+            "data": diagnosis_response
+        }
 
     except Exception as e:
         logging.error(f"Error during diagnosis: {str(e)}")
-        raise HTTPException(status_code=500, detail=str(e))
+        raise HTTPException(status_code=500, detail={"status": 500, "message": "fail", "data": str(e)})
 
 # Chạy ứng dụng FastAPI
 if __name__ == "__main__":
